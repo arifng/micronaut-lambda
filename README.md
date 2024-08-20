@@ -13,6 +13,7 @@
   }
 }
 ```
+- Docs: [Sample project](https://guides.micronaut.io/latest/mn-application-aws-lambda-java11-gradle-java.html)
 # Useful links
 ## Handler
 

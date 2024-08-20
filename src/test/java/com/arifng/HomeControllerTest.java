@@ -32,4 +32,15 @@ class HomeControllerTest {
         assertEquals(HttpStatus.OK.getCode(), response.getStatusCode());
         assertEquals("{\"message\":\"Hello World\"}",  response.getBody());
     }
+
+    @Test
+    void testPingHandler() {
+        APIGatewayProxyRequestEvent request = new APIGatewayProxyRequestEvent();
+        request.setPath("/ping");
+        request.setHttpMethod(HttpMethod.GET.toString());
+        var response = handler.handleRequest(request, new MockLambdaContext());
+
+        assertEquals(HttpStatus.OK.getCode(), response.getStatusCode());
+        assertEquals("pong",  response.getBody());
+    }
 }
